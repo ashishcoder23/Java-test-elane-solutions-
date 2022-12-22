@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "9524d133-a3be-401e-9bf8-b1f826d85d8f",
+		"name": "Coffee Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "order/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"custumer\": {\r\n    \"userName\": \"akashk2251\"\r\n  },\r\n  \"id\": 0,\r\n  \"orderDate\": \"2022-12-21T09:06:22.201Z\",\r\n  \"orderLines\": [\r\n  {\r\n      \"id\": 0,\r\n      \"product\": {\r\n        \"id\": 5\r\n      },\r\n      \"quantity\": 2\r\n    },\r\n  {\r\n      \"id\": 0,\r\n      \"product\": {\r\n        \"id\": 7\r\n      },\r\n      \"quantity\": 3\r\n    }\r\n  ],\r\n  \"total\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/order-management/order/create"
+			},
+			"response": []
+		},
+		{
+			"name": "order/deleteById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/order-management/order/deleteById?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order-management",
+						"order",
+						"deleteById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order/getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/order-management/order/getById?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order-management",
+						"order",
+						"getById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order/listOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/order-management/order/listOrders"
+			},
+			"response": []
+		},
+		{
+			"name": "order/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/order-management/order/products"
+			},
+			"response": []
+		},
+		{
+			"name": "product/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n      \"productName\": \"Test Coffee\",\r\n      \"productDescription\": \"First Coffee\",\r\n      \"unitPrice\": 2.6\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/order-management/product/create"
+			},
+			"response": []
+		},
+		{
+			"name": "register/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user@gmail.com\",\r\n  \"enable\": true,\r\n  \"firstName\": \"Steave\",\r\n  \"id\": 0,\r\n  \"lastName\": \"Jobs\",\r\n  \"location\": {\r\n    \"country\": \"America\",\r\n    \"houseNo\": \"48B\",\r\n    \"id\": 0,\r\n    \"nearByLocation\": \"School\",\r\n    \"place\": \"Mohali\",\r\n    \"province\": \"Mohali\",\r\n    \"streetNo\": \"7\"\r\n  },\r\n  \"phoneNo\": \"9567412836\",\r\n  \"userName\": \"xym@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/order-management/register/create"
+			},
+			"response": []
+		}
+	]
+}
