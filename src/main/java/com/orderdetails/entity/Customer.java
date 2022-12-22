@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
@@ -35,6 +37,9 @@ public class Customer {
 	@Column(unique = true)
 	private String email;
 
+	@Column(unique = true)
+	@Min(value = 10)
+	@Max(value = 10)
 	private String phoneNo;
 
 	@NotEmpty(message = "Username cannot be empty")
@@ -43,7 +48,7 @@ public class Customer {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address location;
-	
+
 	private Boolean enable = true;
 
 }

@@ -12,14 +12,14 @@ import com.orderdetails.entity.Product;
 import com.orderdetails.service.ProductService;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/api/v1/product")
 public class ProductController {
 
 	@Autowired
 	private ProductService service;
 	
 	@PostMapping("/create")
-	private ResponseEntity<FinalResponse> create(@RequestBody Product product) {
-		return service.create(product);
+	private ResponseEntity<FinalResponse> createProduct(@RequestBody Product product) {
+		return service.createProduct(product);
 	}
 }
